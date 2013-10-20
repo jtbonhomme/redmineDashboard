@@ -5,11 +5,19 @@
 this.Models = {};
 
 /**
- * Controls is the namespace for all controls.
+ * Views is the namespace for all controls.
  *
  * @type {Object}
  */
 this.Views = {
+};
+
+/**
+ * Collections is the namespace for all collections.
+ *
+ * @type {Object}
+ */
+this.Collections = {
 };
 
 /**

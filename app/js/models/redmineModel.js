@@ -1,4 +1,3 @@
-
 (function(global, models) {
   'use strict';
 
@@ -11,18 +10,23 @@
    var RedmineModel = Backbone.Model.extend({
     defaults: {
       title:               "R7 TNT",
-      milestone:           "PREDPLOIEMENT 10k",
-      percent:             "68.342345",
-      usLeft:              "2",
-      usTotal:             "4",
-      defectsLeft:         "6",
-      defectsTotal:        "14",
-      totalDefectsOpen:    "124",
-      totalDefectsClosed:  "645"
+      milestone:           "CURRENT RELEASE",
+      percent:             "100",
+      usLeft:              "0",
+      usTotal:             "0",
+      defectsLeft:         "0",
+      defectsTotal:        "0",
+      totalDefectsOpen:    "0",
+      totalDefectsClosed:  "0"
     },
+
+    url: "http://localhost:8888/api/redmine.json",
 
     initialize: function(){
       LOG('::initialize::');
+      this.on('change', function(){
+        LOG('- Values for model RedmineModel have changed.');
+      });
     }
   });
 

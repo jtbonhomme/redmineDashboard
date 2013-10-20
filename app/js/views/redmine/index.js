@@ -14,6 +14,7 @@
 
     initialize: function() {
       this.render();
+      global.app.data.redmineModel.bind('change', _.bind(this.render, this));
     },
 
     render: function() {

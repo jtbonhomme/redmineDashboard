@@ -16,7 +16,7 @@
   "predef": [
     "LOGGER", "Application",
     "Model", "Collection",
-    "Promise", 
+    "$", "_",
     "renderTemplate", "JST",
     "Backbone","Underscore","JQuery"
   ]

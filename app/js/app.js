@@ -76,13 +76,16 @@
    */
   App.prototype.fetch = function() {
     LOG('::fetch::');
-/*      return Promise.when(
+      return $.when(
       // static models
-      Promise.lazy(this.data.defects.fetch())
+      this.data.redmineModel.fetch()
     )
-      .fail(function() {
+    .done(function() {
+        LOG('Fetching data is done');
+    })
+    .fail(function() {
         console.error('Error while fetching application data');
-      });*/
+    });
   };
 
   /**
@@ -109,17 +112,14 @@
       console.error('Error while booting the application');
     }
 
-/*
-    // 
-    Promise.chain(
-      this.fetch,
+    //  Fetch models
+    $.when(
+      this.fetch()
       // bind models
-      this.bindModels
+      //this.bindModels
     )
-      .context(this)
-      .then(success, failure, this)
-      .start();
-*/
+    .then(success, failure, this);
+
     return this;
   };
 
