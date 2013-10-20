@@ -190,8 +190,8 @@ module.exports = function(grunt) {
     //
     watch: {
       scripts: {
-        files: ['<%= dirs.js %><%= files.js %>', 'Gruntfile.js'],
-        tasks: ['jshint', 'copy:js', 'copy:vendors', 'mince', 'jst', 'concat:js', 'env', (LOGGER ? 'logger' : 'nologger')]
+        files: ['<%= dirs.js %><%= files.js %>', '<%= dirs.css %><%= files.css %>', '<%= dirs.tpl %><%= files.tpl %>', 'Gruntfile.js', '<%= dirs.app %>index.html'],
+        tasks: ['jshint', 'copy:js', 'copy:vendors', 'mince', 'jst', 'concat:js', 'concat:css', 'index', 'clean:tmp', 'env', (LOGGER ? 'logger' : 'nologger')]
       }
     }
   });

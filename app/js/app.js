@@ -66,8 +66,8 @@
     // Controls
     LOG('::createViews::');
 
-    this.data.indexView  = new (views.IndexView)();
-    LOG('indexView.el:' + this.data.indexView.el);
+    this.data.redmineView  = new (views.RedmineView)();
+
     return this;
   };
 

@@ -1,65 +1,61 @@
 <!doctype html>
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
     <link rel="stylesheet" href="./fonts/track.css">
     <link href="css/redmineDashboard.css" rel="stylesheet" />
   </head>
-  <body ng-controller="MainController">
 
-    <!-- ============================================ The MEAT ===================================================== -->
+  <body>
+    <div class="redmine-status" id="redmine-status">
 
+<!--
+      <div class="branch-title milestone-title">
+        R7 TNT<span>-</span>PREDEPLOIEMENT 10k
+      </div>
 
-  <div class="branch-status" ng-controller="BranchStatusController">
-    <div class="branch" ng-repeat="branch in branches">
-      <h2 class="branch-title" bind-markdown="branch.title"></h2>
+      <progress-bar>
+        <div class="progress">
+          <div class="progress-bar" style="width: 68.34254143646409%;"></div>
+        </div>
+      </progress-bar>
 
-      <card ng-repeat="card in branch.cards" card-data="card"></card>
+      <div class="card redmine-card milestone-card pr-card">
+        <div class="card-content">
+          <h3 class="card-title">User Stories</h3>
+          <div class="card-value">0</div>
+          <p class="card-note">out of <strong>118</strong></p>
+        </div>
+      </div>
+
+      <div class="card redmine-card milestone-card issue-card">
+        <div class="card-content">
+          <h3 class="card-title">Issues</h3>
+          <div class="card-value">3</div>
+          <p class="card-note">out of <strong>63</strong></p>
+        </div>
+      </div>
+
+      <div class="card redmine-card total-card pr-card total-pr-card">
+        <div class="card-content">
+          <h3 class="card-title">Total <span>Open Issues</span></h3>
+          <div class="card-value">163</div>
+        </div>
+      </div>
+
+      <div class="card redmine-card total-card issue-card total-issue-card">
+        <div class="card-content">
+          <h3 class="card-title">Total <span>Closed Issues</span></h3>
+          <div class="card-value">548</div>
+        </div>
+      </div>
+-->
+
     </div>
-  </div>
 
-  <div class="github-status" ng-controller="GithubStatusController">
-    <div class="branch-title milestone-title" bind-markdown="milestone.title"></div>
-    <progress-bar done="milestone.done" total="milestone.total"></progress-bar>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/underscore-min.js"></script>
+    <script src="js/backbone-min.js"></script>
+    <script src="js/redmineDashboard.js"></script>
 
-    <card ng-repeat="card in milestone.cards" card-data="card"></card>
-    <div class="totals">
-      <card ng-repeat="card in milestone.totalCards" card-data="card"></card>
-    </div>
-  </div>
-
-
-  <div class="notification notification-error" id="notification" ng-class="{'notification-active':brokenBuild}">
-    <div class="notification-title">
-      <div bind-markdown="brokenBuild.branch"></div>
-      <small>Build</small>
-    </div>
-    <div class="notification-value">Broken</div>
-    <div class="notification-note">by <strong>{{brokenBuild.author}}</strong></div>
-  </div>
-
-  <div class="notification notification-success" id="notification" ng-class="{'notification-active':fixedBuild}">
-    <div class="notification-title">
-      <div bind-markdown="fixedBuild.branch"></div>
-      <small>Build</small>
-    </div>
-    <div class="notification-value">Fixed</div>
-    <div class="notification-note">by <strong>{{fixedBuild.author}}</strong></div>
-  </div>
-
-
-    <!-- ======================================================================================================= -->
-
-  <script src="js/jquery.min.js"></script>
-  <script src="js/underscore-min.js"></script>
-  <script src="js/backbone-min.js"></script>
-  <script src="js/redmineDashboard.js"></script>
-
-        <!-- endbuild -->
-</body>
+  </body>
 </html>

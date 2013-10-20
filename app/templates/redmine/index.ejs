@@ -1,0 +1,39 @@
+<div class="branch-title milestone-title">
+  <%= obj.title %><span> - </span><%= obj.milestone %>
+</div>
+
+<progress-bar>
+  <div class="progress">
+    <div class="progress-bar" style="width: <%= obj.percent %>%;"></div>
+  </div>
+</progress-bar>
+
+<div class="card redmine-card milestone-card pr-card">
+  <div class="card-content">
+    <h3 class="card-title">User Stories</h3>
+    <div class="card-value"><%= obj.usLeft %></div>
+    <p class="card-note">out of <strong><%= obj.usTotal %></strong></p>
+  </div>
+</div>
+
+<div class="card redmine-card milestone-card issue-card">
+  <div class="card-content">
+    <h3 class="card-title">Defects</h3>
+    <div class="card-value"><%= obj.defectsLeft %></div>
+    <p class="card-note">out of <strong><%= obj.defectsTotal %></strong></p>
+  </div>
+</div>
+
+<div class="card redmine-card total-card pr-card total-pr-card">
+  <div class="card-content">
+    <h3 class="card-title">Total <span>Open Issues</span></h3>
+    <div class="card-value"><%= obj.totalDefectsOpen %></div>
+  </div>
+</div>
+
+<div class="card redmine-card total-card issue-card total-issue-card">
+  <div class="card-content">
+    <h3 class="card-title">Total <span>Closed Issues</span></h3>
+    <div class="card-value"><%= obj.totalDefectsClosed %></div>
+  </div>
+</div>

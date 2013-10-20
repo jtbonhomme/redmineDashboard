@@ -1,0 +1,183 @@
+body {
+  width: 1280px;
+  height: 720px;
+  overflow: hidden;
+  background-color: #252525;
+  font-family: 'Track';
+  font-size: 20px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.redmine-status {
+  float: right;
+  width: 740px;
+  background-color: #464646;
+  box-shadow: rgba(0, 0, 0, .2) 0 0 150px inset;
+}
+
+.branch-title {
+  margin-top: 60px;
+  margin-bottom: 40px;
+  line-height: 40px;
+  color: #FFF;
+  font-size: 30px;
+  text-align: center;
+  text-shadow: rgba(0, 0, 0, .5) 0 3px 5px;
+}
+
+.branch-title span {
+  color: #919191;
+}
+
+.milestone-title {
+  position: relative;
+  margin-bottom: 0;
+}
+
+.milestone-title::before {
+  content: 'Milestone';
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  color: #C0C0C0;
+  font-size: 20px;
+}
+
+.progress {
+  height: 10px;
+  margin: 5px 40px 23px;
+  border-radius: 3px;
+  background-color: #5E5E5E;
+}
+
+.progress-bar {
+  width: 95%; /* dynamic */
+  height: 100%;
+  float: left;
+  border-radius: 3px;
+  background-color: #9CC563;
+  box-shadow: rgba(0, 0, 0, .2) 0 -2px 0 inset;
+  transition: width 1s ease;
+}
+
+.card {
+  float: left;
+  position: relative;
+  width: 510px;
+  height: 280px;
+  margin: 0 0 30px 40px;
+  border-radius: 5px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.card-content {
+  position: relative;
+  height: 100%;
+  padding: 0 40px;
+  border-radius: 4px;
+  /*box-shadow: rgba(0, 0, 0, .2) 0 -5px 0 inset, rgba(0, 0, 0, .75) 0 1px 8px;*/
+  text-shadow: rgba(255, 255, 255, .5) 0 1px 1px;
+}
+
+.card-title {
+  margin-bottom: 25px;
+  padding-top: 40px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 30px;
+}
+
+.card-value {
+  min-height: 80px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  font-size: 90px;
+  line-height: 80px;
+}
+
+.card-note {
+  margin-top: 25px;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.card:last-child {
+  margin-bottom: 40px;
+}
+
+
+.redmine-card {
+  width: 310px;
+}
+
+.redmine-card .card-title {
+  font-size: 25px;
+}
+
+.milestone-card {
+  margin-bottom: 20px;
+}
+
+.pr-card {
+  text-align: left;
+}
+
+.issue-card {
+  text-align: right;
+}
+
+.pr-card .card-title,
+.issue-card .card-title {
+  color: #989898;
+}
+
+.pr-card .card-value,
+.issue-card .card-value {
+  color: #525252;
+}
+
+.pr-card .card-note,
+.issue-card .card-note {
+  color: #C6C6C6;
+}
+
+.pr-card .card-note strong,
+.issue-card .card-note strong {
+  color: #919191;
+}
+
+.total-card {
+  background-color: transparent;
+  box-shadow: none;
+  color: #989898;
+  text-shadow: rgba(0, 0, 0, .5) 0 3px 5px;
+}
+
+.total-card .card-title,
+.total-card .card-value {
+  color: #989898;
+  text-shadow: rgba(0, 0, 0, .3) 0 1px 3px;
+}
+
+
+.total-card .card-content {
+  box-shadow: none;
+  padding-bottom: 5px;
+}
+
+.total-card .card-title {
+  padding-top: 65px;
+  font-size: 30px;
+}
+
+.total-card .card-title span {
+  display: block;
+  font-size: 25px;
+}
+
+.total-card .card-value {
+  padding-top: 35px;
+}
+
