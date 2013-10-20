@@ -1,7 +1,7 @@
 {
-  "name": "backbone_template",
+  "name": "redmineDashboard",
   "private": true,
-  "description": "A backbone.js project template",
+  "description": "An AngularJs dashboard inspired, for Redmine",
   "version": "0.0.1",
   "author": "Jean-Thierry",
   "engines": {

@@ -1,19 +1,65 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Backbone Template Application</title>
-	<meta charset="utf-8" />
-	<link href="css/backbone_template.css" rel="stylesheet" />
-	<script src="js/jquery.min.js"></script>
-	<script src="js/underscore-min.js"></script>
-	<script src="js/backbone-min.js"></script>
-	<script src="js/backbone_template.js"></script>
-	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="img/favicon.ico" />
-</head>
-<body>
-	<!-- main app container -->
-	<div id="main">
-		<div id="index"></div>
-	</div>
+<!doctype html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <link rel="stylesheet" href="./fonts/track.css">
+    <link href="css/redmineDashboard.css" rel="stylesheet" />
+  </head>
+  <body ng-controller="MainController">
+
+    <!-- ============================================ The MEAT ===================================================== -->
+
+
+  <div class="branch-status" ng-controller="BranchStatusController">
+    <div class="branch" ng-repeat="branch in branches">
+      <h2 class="branch-title" bind-markdown="branch.title"></h2>
+
+      <card ng-repeat="card in branch.cards" card-data="card"></card>
+    </div>
+  </div>
+
+  <div class="github-status" ng-controller="GithubStatusController">
+    <div class="branch-title milestone-title" bind-markdown="milestone.title"></div>
+    <progress-bar done="milestone.done" total="milestone.total"></progress-bar>
+
+    <card ng-repeat="card in milestone.cards" card-data="card"></card>
+    <div class="totals">
+      <card ng-repeat="card in milestone.totalCards" card-data="card"></card>
+    </div>
+  </div>
+
+
+  <div class="notification notification-error" id="notification" ng-class="{'notification-active':brokenBuild}">
+    <div class="notification-title">
+      <div bind-markdown="brokenBuild.branch"></div>
+      <small>Build</small>
+    </div>
+    <div class="notification-value">Broken</div>
+    <div class="notification-note">by <strong>{{brokenBuild.author}}</strong></div>
+  </div>
+
+  <div class="notification notification-success" id="notification" ng-class="{'notification-active':fixedBuild}">
+    <div class="notification-title">
+      <div bind-markdown="fixedBuild.branch"></div>
+      <small>Build</small>
+    </div>
+    <div class="notification-value">Fixed</div>
+    <div class="notification-note">by <strong>{{fixedBuild.author}}</strong></div>
+  </div>
+
+
+    <!-- ======================================================================================================= -->
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/underscore-min.js"></script>
+  <script src="js/backbone-min.js"></script>
+  <script src="js/redmineDashboard.js"></script>
+
+        <!-- endbuild -->
 </body>
 </html>

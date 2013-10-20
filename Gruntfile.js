@@ -72,7 +72,7 @@ module.exports = function(grunt) {
     logger: LOGGER,
 
     dirs: {
-      node:     'node_modules/',
+      node:    'node_modules/',
       app:     'app/',
       js:      'app/js/',
       vendors: 'app/vendors/',
