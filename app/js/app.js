@@ -34,7 +34,7 @@
   App.prototype.createModels = function() {
     LOG('::createModels::');
 
-    this.data.myModel  = new (models.MyModel)();
+    this.data.redmineModel  = new (models.RedmineModel)();
 
     return this;
   };

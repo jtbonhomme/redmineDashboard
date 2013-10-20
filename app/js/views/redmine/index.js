@@ -18,17 +18,7 @@
 
     render: function() {
       LOG('::render::');
-      var obj = {
-        title:               "R7 TNT",
-        milestone:           "PREDPLOIEMENT 10k",
-        percent:             "68.342345",
-        usLeft:              "2",
-        usTotal:             "4",
-        defectsLeft:         "6",
-        defectsTotal:        "14",
-        totalDefectsOpen:    "124",
-        totalDefectsClosed:  "645"
-      };
+      var obj = global.app.data.redmineModel.attributes;
       this.el.innerHTML = renderTemplate('redmine/index', obj);
       return this;
     }

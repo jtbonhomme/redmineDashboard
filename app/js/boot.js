@@ -21,9 +21,8 @@
   function createApp() {
     LOG('::createApp::');
     var el = document.getElementById('main');
-    app = new (global.App)(el);
+    app = global.app = new (global.App)(el);
     app.init();
-    global.app = app;
   }
 
   function clean() {
