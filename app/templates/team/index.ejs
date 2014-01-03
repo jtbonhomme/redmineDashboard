@@ -1,0 +1,27 @@
+<div class="branch-title">
+  <%= obj.title %><span>
+</div>
+
+<div class="collumn-title collumn-header">
+  <div class="name-collumn"></div>
+  <div class="open-collumn">OPEN</div>
+  <div class="closed-collumn">CLOSED</div>
+</div>
+
+<% for(var i=0; i<obj.team.length; i++) {%>
+
+<div class="collumn-title">
+    <div class="name-collumn">
+      <%= obj.team[i].name %>
+    </div>
+
+    <div class="open-collumn">
+      <%= obj.team[i].totalIssuesOpen %>
+    </div>
+
+    <div class="closed-collumn">
+      <%= obj.team[i].totalIssuesClosed %>
+    </div>
+</div>
+
+<% } %>

@@ -15,11 +15,18 @@ body {
   box-shadow: rgba(0, 0, 0, .2) 0 0 150px inset;
 }
 
+.team-status {
+  float: left;
+  width: 540px;
+  box-shadow: rgba(0, 0, 0, .2) 0 0 150px inset;
+}
+
 .branch-title {
   margin-top: 60px;
   margin-bottom: 40px;
   line-height: 40px;
   color: #FFF;
+  background-color: #464646;
   font-size: 30px;
   text-align: center;
   text-shadow: rgba(0, 0, 0, .5) 0 3px 5px;
@@ -27,6 +34,41 @@ body {
 
 .branch-title span {
   color: #919191;
+}
+
+.collumn-title {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  line-height: 40px;
+  color: #FFF;
+  font-size: 30px;
+  text-align: center;
+  text-shadow: rgba(0, 0, 0, .5) 0 3px 5px;
+}
+
+.name-collumn {
+  float: left;
+  text-align: left;
+  margin-left: 10px;
+  margin-bottom: 4px;
+  width: 250px;
+  font-size: 23px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.open-collumn {
+  float: left;
+  text-align: center;
+  margin-bottom: 4px;
+  width: 135px;
+}
+
+.closed-collumn {
+  float: left;
+  text-align: center;
+  margin-bottom: 4px;
+  width: 135px;
 }
 
 .milestone-title {
@@ -114,6 +156,23 @@ body {
 
 .redmine-card .card-title {
   font-size: 25px;
+}
+
+
+.team-card {
+  background-color: transparent;
+  color: #989898;
+}
+
+.team-name{
+}
+
+.team-card .card-title {
+  font-size: 20px;
+}
+
+.team-card .card-content {
+  width: 210px;
 }
 
 .milestone-card {

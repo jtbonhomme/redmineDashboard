@@ -1,0 +1,23 @@
+{
+  "title": "Webapp Team Issues",
+  "team":  [
+	{
+	  "name":                    "Alexandre Duros",
+      "totalIssues":             "6",
+      "totalIssuesOpen":         "4",
+      "totalIssuesClosed":       "2"
+    },
+	{
+	  "name":                    "Pierre Guilleminot",
+      "totalIssues":             "5",
+      "totalIssuesOpen":         "4",
+      "totalIssuesClosed":       "1"
+    },
+	{
+	  "name":                    "Paul-Xavier Ceccaldi",
+      "totalIssues":             "5",
+      "totalIssuesOpen":         "4",
+      "totalIssuesClosed":       "1"
+    }
+  ]
+}

@@ -83,11 +83,12 @@ module.exports = function(grunt) {
     },
 
     files: {
-      all: '**/*',
-      js:  '**/*.js',
-      css: '**/*.css',
-      tpl: '**/*.ejs',
-      img: '**/*.{png,gif,jpg,jpeg}'
+      all:  '**/*',
+      js:   '**/*.js',
+      json: '*.json',
+      css:  '**/*.css',
+      tpl:  '**/*.ejs',
+      img:  '**/*.{png,gif,jpg,jpeg}'
     },
 
     meta: {
@@ -106,6 +107,12 @@ module.exports = function(grunt) {
         expand: true,
         src: ['<%= dirs.js %><%= files.js %>'],
         dest: '<%= dirs.tmp %>'
+      },
+      json: {
+        expand: true,
+        flatten: true, // do not copy dir hierarchy, copy all js files directly under dest:
+        src: ['<%= dirs.app %><%= files.json %>'],
+        dest: '<%= dirs.public %>res'
       },
       vendors: {
         expand: true,
@@ -181,7 +188,8 @@ module.exports = function(grunt) {
         '<%= dirs.tmp %>*',
         '<%= dirs.public %>js/*',
         '<%= dirs.public %>css/*',
-        '<%= dirs.public %>index.html'
+        '<%= dirs.public %>index.html',
+        '<%= dirs.public %>*.json'
       ],
       tmp: ['<%= dirs.tmp %>*']
     },
@@ -190,8 +198,8 @@ module.exports = function(grunt) {
     //
     watch: {
       scripts: {
-        files: ['<%= dirs.js %><%= files.js %>', '<%= dirs.css %><%= files.css %>', '<%= dirs.tpl %><%= files.tpl %>', 'Gruntfile.js', '<%= dirs.app %>index.html'],
-        tasks: ['jshint', 'copy:js', 'copy:vendors', 'mince', 'jst', 'concat:js', 'concat:css', 'index', 'clean:tmp', 'env', (LOGGER ? 'logger' : 'nologger')]
+        files: ['<%= dirs.js %><%= files.js %>', '<%= dirs.js %><%= files.json %>', '<%= dirs.css %><%= files.css %>', '<%= dirs.tpl %><%= files.tpl %>', 'Gruntfile.js', '<%= dirs.app %>index.html'],
+        tasks: ['jshint', 'copy:js', 'copy:json', 'copy:vendors', 'mince', 'jst', 'concat:js', 'concat:css', 'index', 'clean:tmp', 'env', (LOGGER ? 'logger' : 'nologger')]
       }
     }
   });
@@ -268,7 +276,7 @@ module.exports = function(grunt) {
     grunt.log.ok();
   });
 
-  var buildJS  = ['copy:js', 'copy:vendors', 'mince', 'jst', 'concat:js', 'env', (LOGGER ? 'logger' : 'nologger')];
+  var buildJS  = ['copy:js', 'copy:json', 'copy:vendors', 'mince', 'jst', 'concat:js', 'env', (LOGGER ? 'logger' : 'nologger')];
   var buildAll = _.compact([(lint && 'jshint'), 'clean:all', 'build:js', 'build:css', 'index', 'clean:tmp']);
 
   grunt.registerTask('build:css',   'Builds the css',          ['concat:css']);

@@ -3,6 +3,15 @@ redmineDashboard
 
 An Angularjs dashboard inspired made with backbone.
 
+Start
+================
+
+    npm install
+    grunt build
+    node api
+
+Static file server running at <code>http://localhost:8888</code>
+
 todo
 ====
 

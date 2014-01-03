@@ -20,13 +20,23 @@
       totalDefectsClosed:  "0"
     },
 
-    url: "http://localhost:8888/api/redmine.json",
+    url: "http://localhost:8888/res/redmine.json",
 
     initialize: function(){
       LOG('::initialize::');
+      this.myFetch();
       this.on('change', function(){
         LOG('- Values for model RedmineModel have changed.');
       });
+      var self = this;
+      setInterval(function() {
+          self.myFetch();
+      }, 10000);
+    },
+
+    myFetch: function() {
+     LOG('::myFetch::');
+     this.fetch();
     }
   });
 

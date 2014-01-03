@@ -8,7 +8,7 @@
 
 /**
  * Entry point of the application
- * Creates a new app binded with 'main' div, intialize (app.init) it, and 
+ * Creates a new app binded with 'main' div, intialize (app.init) it, and
  * start it (app.boot)
  */
 
@@ -35,6 +35,7 @@
     LOG('::createModels::');
 
     this.data.redmineModel  = new (models.RedmineModel)();
+    this.data.teamModel  = new (models.TeamModel)();
 
     return this;
   };
@@ -52,7 +53,6 @@
    */
   App.prototype.bindListeners = function() {
     LOG('::bindListeners::');
-    //this.data.system.on('low-battery', this.popup('shared/popup/battery', 'battery', 'long'), this);
   };
 
   /**
@@ -67,6 +67,7 @@
     LOG('::createViews::');
 
     this.data.redmineView  = new (views.RedmineView)();
+    this.data.teamView  = new (views.TeamView)();
 
     return this;
   };
@@ -76,9 +77,11 @@
    */
   App.prototype.fetch = function() {
     LOG('::fetch::');
-      return $.when(
+
+    return $.when(
       // static models
-      this.data.redmineModel.fetch()
+      this.data.redmineModel.fetch(),
+      this.data.teamModel.fetch()
     )
     .done(function() {
         LOG('Fetching data is done');
@@ -111,7 +114,7 @@
     function failure() {
       console.error('Error while booting the application');
     }
-
+/*
     //  Fetch models
     $.when(
       this.fetch()
@@ -119,7 +122,7 @@
       //this.bindModels
     )
     .then(success, failure, this);
-
+*/
     return this;
   };
 
