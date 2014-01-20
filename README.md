@@ -6,6 +6,7 @@ An Angularjs dashboard inspired made with backbone.
 Start
 ================
 
+	npm install -g grunt-cli
     npm install
     grunt build
     node api

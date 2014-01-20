@@ -6,13 +6,14 @@
     /*
      * Logger for my views
      */
-     LOG = LOGGER('team');
+     LOG = LOGGER('TeamView');
 
   var TeamView = Backbone.View.extend({
 
     el: '#team-status',
 
     initialize: function() {
+      LOG('::initialize::');
       this.render();
       global.app.data.teamModel.bind('change', _.bind(this.render, this));
     },

@@ -36,13 +36,25 @@
 
     this.data.redmineModel  = new (models.RedmineModel)();
     this.data.teamModel  = new (models.TeamModel)();
+    this.data.issuesModel  = new (models.IssuesModel)();
+    this.data.usersModel  = new (models.UsersModel)();
 
     return this;
   };
 
   App.prototype.bindModels = function() {
     LOG('::bindModels::');
-    LOG('models binded');
+    return $.when(
+      this.data.usersModel.bind('change', _.bind(this.data.teamModel.update, this)),
+      this.data.issuesModel.bind('change', _.bind(this.data.redmineModel.update, this)),
+      this.data.issuesModel.bind('change', _.bind(this.data.teamModel.update, this))
+      )
+    .done(function() {
+        LOG('Binding models is done');
+    })
+    .fail(function() {
+        console.error('Error while binding models');
+    });
   };
 
   /**
@@ -80,8 +92,10 @@
 
     return $.when(
       // static models
+      this.data.usersModel.fetch(),
+      this.data.issuesModel.fetch()/*,
       this.data.redmineModel.fetch(),
-      this.data.teamModel.fetch()
+      this.data.teamModel.fetch()*/
     )
     .done(function() {
         LOG('Fetching data is done');
@@ -114,15 +128,14 @@
     function failure() {
       console.error('Error while booting the application');
     }
-/*
-    //  Fetch models
+
+    //  Bind models
     $.when(
-      this.fetch()
-      // bind models
-      //this.bindModels
+      this.fetch(),
+      this.bindModels()
     )
     .then(success, failure, this);
-*/
+
     return this;
   };
 

@@ -6,13 +6,14 @@
     /*
      * Logger for my views
      */
-     LOG = LOGGER('redmine');
+     LOG = LOGGER('RedmineView');
 
   var RedmineView = Backbone.View.extend({
 
     el: '#redmine-status',
 
     initialize: function() {
+      LOG('::initialize::');
       this.render();
       global.app.data.redmineModel.bind('change', _.bind(this.render, this));
     },
