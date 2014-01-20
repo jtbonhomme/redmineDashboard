@@ -53,7 +53,7 @@
           id = issues[j].assigned_to.id;
           if( team[id] ) {
             var status = issues[j].status.id;
-            if( status === 1  || 
+            if( status === 1  ||
                 status === 2  ||
                 status === 14 ||
                 status === 12 ||

@@ -131,8 +131,8 @@
 
     //  Bind models
     $.when(
-      this.fetch(),
-      this.bindModels()
+      this.bindModels(),
+      this.fetch()
     )
     .then(success, failure, this);
 

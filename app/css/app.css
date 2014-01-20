@@ -10,14 +10,14 @@ body {
 
 .redmine-status {
   float: right;
-  width: 740px;
+  width: 640px;
   background-color: #464646;
   box-shadow: rgba(0, 0, 0, .2) 0 0 150px inset;
 }
 
 .team-status {
   float: left;
-  width: 540px;
+  width: 640px;
   box-shadow: rgba(0, 0, 0, .2) 0 0 150px inset;
 }
 
@@ -51,7 +51,7 @@ body {
   text-align: left;
   margin-left: 10px;
   margin-bottom: 4px;
-  width: 250px;
+  width: 350px;
   font-size: 23px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -151,7 +151,7 @@ body {
 
 
 .redmine-card {
-  width: 310px;
+  width: 260px;
 }
 
 .redmine-card .card-title {
