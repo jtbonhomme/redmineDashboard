@@ -1,4 +1,6 @@
 node_modules
+/app/js/config.js
+app/js/config.js
 /tmp
 *.log
 /public/css/
