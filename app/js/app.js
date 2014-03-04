@@ -1,5 +1,6 @@
 // mincer directives processor are listed bellow
 //= require namespaces
+//= require config
 //= require libs/logger
 //= require libs/template
 //= require_tree models

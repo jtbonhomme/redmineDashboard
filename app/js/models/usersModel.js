@@ -1,4 +1,4 @@
-(function(global, models) {
+(function(global, models, config) {
   'use strict';
 
   var
@@ -9,11 +9,11 @@
 
    var UsersModel = Backbone.Model.extend({
 
-    url: "http://localhost:8888/res/users.json",
+    url: config.usersUrl,
+
 
     initialize: function(){
       LOG('::initialize::');
-      //this.myFetch();
       this.on('change', function(){
         LOG('- Values for model UsersModel have changed.');
       });
@@ -31,4 +31,4 @@
 
    models.UsersModel = UsersModel;
 
- })(this, this.Models);
+ })(this, this.Models, this.Config);

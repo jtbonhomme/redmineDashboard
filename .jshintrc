@@ -16,7 +16,7 @@
   "predef": [
     "LOGGER", "Application",
     "Model", "Collection",
-    "$", "_",
+    "$", "_", "assigned_to",
     "renderTemplate", "JST",
     "Backbone","Underscore","JQuery"
   ]

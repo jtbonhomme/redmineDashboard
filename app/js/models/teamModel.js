@@ -31,7 +31,7 @@
 
     update: function() {
       LOG('::update::');
-      var users  = global.app.data.usersModel.attributes.group.users;
+      var users  = global.app.data.usersModel.attributes.users;
       var issues = global.app.data.issuesModel.attributes.issues;
       var team = [];
       var id;
@@ -40,7 +40,7 @@
         for (var i = users.length - 1; i >= 0; i--) {
           id = users[i].id;
           team[id] = {};
-          team[id].name              = users[i].name;
+          team[id].name              = users[i].firstname + " " + users[i].lastname;
           //team[i].id                = users[i].id;
           team[id].totalIssues       = 0;
           team[id].totalIssuesOpen   = 0;

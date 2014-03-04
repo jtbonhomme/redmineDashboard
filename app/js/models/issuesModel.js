@@ -1,4 +1,4 @@
-(function(global, models) {
+(function(global, models, config) {
   'use strict';
 
   var
@@ -9,7 +9,8 @@
 
    var IssuesModel = Backbone.Model.extend({
 
-    url: "http://localhost:8888/res/issues.json",
+    url: config.issuesUrl,
+
 
     initialize: function(){
       LOG('::initialize::');
@@ -31,4 +32,4 @@
 
    models.IssuesModel = IssuesModel;
 
- })(this, this.Models);
+ })(this, this.Models, this.Config);
