@@ -9,5 +9,5 @@
 
 this.Config = {
 	usersUrl: "http://your.redmine.server.com/users.json?group_id=1&key=abcded01234567890",
-    issuesUrl: "http://your.redmine.server.com/projects/your_project/issues.json?query_id=1&offset=0&limit=100&key=abcded01234567890"
+	issuesUrl: "http://your.redmine.server.com/projects/your_project/issues.json?query_id=1&offset=0&limit=100&key=abcded01234567890"
 };
